@@ -1,4 +1,4 @@
-const { ApolloServer, gql } = require("apollo-server-lambda")
+const { ApolloServer, gql, UserInputError } = require("apollo-server-lambda")
 const {
   ApolloServerPluginLandingPageLocalDefault,
 } = require("apollo-server-core")
@@ -8,6 +8,12 @@ const typeDefs = gql`
   type Query {
     hello: String
     error: String
+    userWithID(id: ID!): User
+  }
+
+  type User {
+    id: ID!
+    name: String!
   }
 `
 
@@ -17,6 +23,12 @@ const resolvers = {
     hello: () => "Hello world!",
     error: () => {
       throw new Error("Error")
+    },
+    userWithID: (_, { id }) => {
+      if (id < 1) {
+        throw new UserInputError("ID must be greater than 0")
+      }
+      return { id: id, name: "User " + id }
     },
   },
 }

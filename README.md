@@ -47,3 +47,19 @@ query ExampleQuery {
 ```
 
 ![GraphQL error](img/graphql-error.png?raw=true)
+
+4. Custom Apollo error codes
+
+You can use any [custom apollo error code](https://www.apollographql.com/docs/apollo-server/data/errors/#error-codes).
+
+```
+query ExampleQuery {
+  userWithID(id: 0) {
+    id
+    name
+  }
+}
+
+```
+
+![Custom Apollo error](img/badinput.png?raw=true)
