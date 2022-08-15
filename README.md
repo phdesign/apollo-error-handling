@@ -26,7 +26,7 @@ View the graphql GUI at [http://localhost:3000/](http://localhost:3000/)
 query ExampleQuery {
   hello
 }
-```gql
+```
 
 2. An internally thrown error
 
@@ -34,7 +34,7 @@ query ExampleQuery {
 query ExampleQuery {
   error
 }
-```gql
+```
 
 ![Internal error](img/internal-error.png?raw=true)
 
@@ -44,6 +44,6 @@ query ExampleQuery {
 query ExampleQuery {
   notfound
 }
-```gql
+```
 
 ![GraphQL error](img/graphql-error.png?raw=true)
