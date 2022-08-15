@@ -1,0 +1,19 @@
+{
+  "name": "apollo-error-handling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/graphql.js",
+  "scripts": {
+    "deploy": "serverless deploy",
+    "start": "NODE_ENV=production serverless offline --noPrependStageInUrl"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-lambda": "^3.10.1",
+    "graphql": "^16.5.0",
+    "serverless": "^3.21.0",
+    "serverless-offline": "^9.2.0"
+  }
+}
